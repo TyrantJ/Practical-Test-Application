@@ -1,0 +1,29 @@
+@model IEnumerable<Practical_Test_Application.Models.Clients>
+
+@{
+    ViewData["Title"] = "Clients List";
+}
+
+<h1>Clients</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Client Code</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Contact</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var client in Model)
+    {
+        <tr>
+            <td>@client.clientCode</td>
+            <td>@client.firstName</td>
+            <td>@client.lastName</td>
+            <td>@client.contact</td>
+        </tr>
+    }
+    </tbody>
+</table>
