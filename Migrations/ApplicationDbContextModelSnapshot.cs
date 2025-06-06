@@ -229,14 +229,16 @@ namespace Practical_Test_Application.Migrations
                     b.Property<string>("clientCode")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("ContactId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NrOfContacts")
+                        .HasColumnType("int");
+
                     b.Property<int>("contact")
                         .HasColumnType("int");
 
-                    b.Property<string>("firstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lastName")
+                    b.Property<string>("fullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -253,6 +255,10 @@ namespace Practical_Test_Application.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("contactId"));
 
+                    b.Property<string>("clientCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -265,7 +271,7 @@ namespace Practical_Test_Application.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("phone")
+                    b.Property<int>("nrOfLinkedClients")
                         .HasColumnType("int");
 
                     b.HasKey("contactId");

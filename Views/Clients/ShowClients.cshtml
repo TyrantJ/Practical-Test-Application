@@ -16,10 +16,7 @@
                 @Html.DisplayNameFor(model => model.clientCode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.firstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.lastName)
+                @Html.DisplayNameFor(model => model.fullName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.contact)
@@ -34,18 +31,13 @@
                 @Html.DisplayFor(modelItem => item.clientCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.firstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.lastName)
+                @Html.DisplayFor(modelItem => item.fullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.contact)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "EditClients", new { id=item.clientCode })
             </td>
         </tr>
 }

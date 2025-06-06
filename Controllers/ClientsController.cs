@@ -19,18 +19,18 @@ public class ClientsController : Controller
 
     public IActionResult ShowClients()
     {
-        var clients = _context.Clients.OrderBy(c => c.firstName).ToList();
+        var clients = _context.Clients.OrderBy(c => c.fullName).ToList();
 
         if (clients.IsNullOrEmpty())
         {
-            return NotFound();
+            return View ("EmptyPage");
         }
         return View(clients);
     }
 
     public async Task<IActionResult> ClientForm(Clients client)
     {
-        ViewBag.ClientsList = _context.Clients.OrderBy(c => c.firstName).ToList();
+        ViewBag.ClientsList = _context.Clients.OrderBy(c => c.fullName).ToList();
         
         
         if (ModelState.IsValid)
@@ -41,6 +41,20 @@ public class ClientsController : Controller
         
         return View(client);
     }
+    
+    public async Task<IActionResult> EditClients (Clients client)
+    {
+        
+        ViewBag.ClientsList = _context.Clients.OrderBy(c => c.fullName).ToList();
+        if (ModelState.IsValid)
+        {
+            _context.Update(client);
+            await _context.SaveChangesAsync();
+        }
+        
+        return View(client);
+    }
+    
     
 
     public async Task<IActionResult> CreateClients(Clients client)

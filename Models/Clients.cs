@@ -6,20 +6,22 @@ namespace Practical_Test_Application.Models;
 
 public record Clients {
     
-    public Clients(string clientCode, String firstName, String lastName, int contact)
+    public Clients(string clientCode, String fullName, int contact, int ContactId, int NrOfContacts)
     {
         this.clientCode = clientCode;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.fullName = fullName;
         this.contact = contact;
-        
+        this.ContactId = ContactId;
+        this.NrOfContacts = NrOfContacts;
+
     }
     
     [Key]
     public String clientCode { get; set; }
-    public String firstName { get; set; }
-    public String lastName { get; set; }
+    public String fullName { get; set; }
     public int contact { get; set; }
+    public int NrOfContacts { get; set; }
+    public int ContactId { get; set; }
 
     
 }

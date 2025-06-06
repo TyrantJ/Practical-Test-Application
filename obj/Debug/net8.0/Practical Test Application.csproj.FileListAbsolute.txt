@@ -309,3 +309,4 @@ C:\Users\2k3je\RiderProjects\Practical Test Application\bin\Debug\net8.0\ru\Micr
 C:\Users\2k3je\RiderProjects\Practical Test Application\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\2k3je\RiderProjects\Practical Test Application\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\2k3je\RiderProjects\Practical Test Application\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\2k3je\RiderProjects\Practical Test Application\obj\Debug\net8.0\Practical Test Application.sourcelink.json
