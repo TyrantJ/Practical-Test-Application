@@ -32,7 +32,6 @@ public class ClientsController : Controller
     {
         ViewBag.ClientsList = _context.Clients.OrderBy(c => c.fullName).ToList();
         
-        
         if (ModelState.IsValid)
         {
             _context.Add(client);
@@ -41,31 +40,47 @@ public class ClientsController : Controller
         
         return View(client);
     }
-    
+
+    [HttpGet]
+    public async Task<IActionResult> EditClients(string clientCode)
+    {
+        var client = await _context.Clients.FindAsync(clientCode);
+        Console.WriteLine(client);
+        return View(client);
+    }
+
+    [HttpPost]
     public async Task<IActionResult> EditClients (Clients client)
     {
-        
-        ViewBag.ClientsList = _context.Clients.OrderBy(c => c.fullName).ToList();
-        if (ModelState.IsValid)
+        Console.WriteLine(client);
+        int newContact = client.ContactId;
+        if (newContact != 0)
         {
-            _context.Update(client);
-            await _context.SaveChangesAsync();
+            int newNrOfContacts = _context.Contacts.Where(c => c.ClientCode == client.clientCode).Count();
+            client.NrOfContacts = newNrOfContacts;
         }
+        Console.WriteLine(client);
         
-        return View(client);
+        _context.Update(client);
+        await _context.SaveChangesAsync();
+        return RedirectToAction("ShowClients");
     }
-    
-    
 
+
+    [HttpGet]
+    public IActionResult CreateClients()
+    {
+        return View();
+    }
+
+
+    [HttpPost]
     public async Task<IActionResult> CreateClients(Clients client)
     {
-        if (ModelState.IsValid)
-        {
             _context.Add(client);
             await _context.SaveChangesAsync();
-        }
-
-        return View();
+            return RedirectToAction("ShowClients");
+        
     }
     
 }
