@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.contact)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactId)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -37,7 +40,10 @@
                 @Html.DisplayFor(modelItem => item.contact)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditClients", new { id=item.clientCode })
+                @Html.DisplayFor(modelItem => item.ContactId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditClients", new { clientCode = item.clientCode })
             </td>
         </tr>
 }

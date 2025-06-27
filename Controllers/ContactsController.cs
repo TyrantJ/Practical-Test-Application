@@ -25,42 +25,55 @@ public class ContactsController : Controller
         
         return View(contacts);
     }
-    
-    public async Task<IActionResult> CreateContacts(Contacts contact)
+
+    [HttpGet]
+    public IActionResult CreateContacts()
     {
-        
-        if (ModelState.IsValid)
-        {
-            _context.Add(contact);
-            await _context.SaveChangesAsync();
-        }
         return View();
     }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateContacts(Contacts contact)
+    { 
+        _context.Add(contact);
+        await _context.SaveChangesAsync();
+        return RedirectToAction("ShowContacts");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> EditContacts(int contactId)
+    {
+        var contact = await _context.Contacts.FindAsync(contactId);
+        return View(contact);
+    }
     
+    [HttpPost]
     public async Task<IActionResult> EditContacts (Contacts contacts)
     {
         
-        ViewBag.ContactList = _context.Contacts.OrderBy(c => c.firstName).ToList();
+        
+        String newClient = contacts.ClientCode;
+        if (newClient != null)
+        {
+            int newNrOfClients = _context.Contacts.Where(c => c.ContactId == contacts.ContactId).Count();
+            contacts.nrOfLinkedClients = newNrOfClients;
+        }
+        
+        _context.Update(contacts);
+        await _context.SaveChangesAsync();
+        return RedirectToAction("ShowContacts");
+    }
+    
+    public async Task<IActionResult> ContactForm(Contacts contacts)
+    {
+        ViewBag.ContactList = _context.Contacts.OrderBy(c => c.FirstName).ToList();
+        
         if (ModelState.IsValid)
         {
-            _context.Update(contacts);
+            _context.Add(contacts);
             await _context.SaveChangesAsync();
         }
         
         return View(contacts);
-    }
-    
-    public async Task<IActionResult> ContactForm(Clients client)
-    {
-        ViewBag.ContactList = _context.Contacts.OrderBy(c => c.firstName).ToList();
-        
-        
-        if (ModelState.IsValid)
-        {
-            _context.Add(client);
-            await _context.SaveChangesAsync();
-        }
-        
-        return View(client);
     }
 }

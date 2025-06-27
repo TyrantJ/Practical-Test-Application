@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.contactId)
+                @Html.DisplayNameFor(model => model.ContactId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.firstName)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.lastName)
+                @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.email)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nrOfLinkedClients)
+                @Html.DisplayNameFor(model => model.ClientCode)
             </th>
             <th></th>
         </tr>
@@ -34,22 +34,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.contactId)
+                @Html.DisplayFor(modelItem => item.ContactId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.firstName)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.lastName)
+                @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.email)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nrOfLinkedClients)
+                @Html.DisplayFor(modelItem => item.ClientCode)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditContacts", new { id=item.contactId })
+                @Html.ActionLink("Edit", "EditContacts", new { contactId = item.ContactId })
             </td>
         </tr>
 }

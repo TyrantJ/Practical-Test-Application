@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "erFn6FzVxB4=",
+  "dgSpecHash": "tzuxwNIVNqg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\2k3je\\RiderProjects\\Practical Test Application\\Practical Test Application.csproj",
+  "projectFilePath": "E:\\Practical Test Application\\Practical Test Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2k3je\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\2k3je\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

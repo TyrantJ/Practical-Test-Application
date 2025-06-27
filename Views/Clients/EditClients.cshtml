@@ -12,19 +12,29 @@
     <div class="col-md-4">
         <form asp-action="EditClients">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="clientCode" />
+            <div class="form-group">
+                <label asp-for="fullName" class="control-label"></label>
+                <input asp-for="fullName" class="form-control"/>
+                <span asp-validation-for="fullName" class="text-danger"></span>
+            </div>
+            <br/>
             <div class="form-group">
                 <label asp-for="contact" class="control-label"></label>
                 <input asp-for="contact" class="form-control" />
                 <span asp-validation-for="contact" class="text-danger"></span>
             </div>
+            <br/>
             <div class="form-group">
                 <label asp-for="ContactId" class="control-label"></label>
                 <input asp-for="ContactId" class="form-control" />
                 <span asp-validation-for="ContactId" class="text-danger"></span>
             </div>
+            <br/>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+            <br/>
         </form>
     </div>
 </div>

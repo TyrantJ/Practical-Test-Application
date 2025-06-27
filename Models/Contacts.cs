@@ -5,28 +5,28 @@ namespace Practical_Test_Application.Models;
 
 public record Contacts
 {
-    public Contacts(string firstName, string lastName, string email, int nrOfLinkedClients, int contactId, string clientCode)
+    public Contacts(string FirstName, string LastName, string Email, int nrOfLinkedClients, int ContactId, string ClientCode)
     {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.Email = Email;
         this.nrOfLinkedClients = nrOfLinkedClients;
-        this.contactId = contactId;
-        this.clientCode = clientCode;
+        this.ContactId = ContactId;
+        this.ClientCode = ClientCode;
     }
     
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int contactId { get; set; }
+    public int ContactId { get; set; }
 
-    public string firstName { get; set; }
+    public string FirstName { get; set; }
     
-    public string lastName { get; set; }
+    public string LastName { get; set; }
     
-    public string email { get; set; }
+    public string Email { get; set; }
     
     public int nrOfLinkedClients { get; set; }
     
-    public string clientCode { get; set; }
+    public string? ClientCode { get; set; }
     
 }

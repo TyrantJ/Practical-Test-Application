@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2k3je\\RiderProjects\\Practical Test Application\\Practical Test Application.csproj": {}
+    "E:\\Practical Test Application\\Practical Test Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2k3je\\RiderProjects\\Practical Test Application\\Practical Test Application.csproj": {
+    "E:\\Practical Test Application\\Practical Test Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2k3je\\RiderProjects\\Practical Test Application\\Practical Test Application.csproj",
+        "projectUniqueName": "E:\\Practical Test Application\\Practical Test Application.csproj",
         "projectName": "Practical Test Application",
-        "projectPath": "C:\\Users\\2k3je\\RiderProjects\\Practical Test Application\\Practical Test Application.csproj",
+        "projectPath": "E:\\Practical Test Application\\Practical Test Application.csproj",
         "packagesPath": "C:\\Users\\2k3je\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2k3je\\RiderProjects\\Practical Test Application\\obj\\",
+        "outputPath": "E:\\Practical Test Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\2k3je\\AppData\\Roaming\\NuGet\\NuGet.Config"

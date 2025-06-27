@@ -235,8 +235,8 @@ namespace Practical_Test_Application.Migrations
                     b.Property<int>("NrOfContacts")
                         .HasColumnType("int");
 
-                    b.Property<int>("contact")
-                        .HasColumnType("int");
+                    b.Property<string>("contact")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("fullName")
                         .IsRequired()
@@ -249,32 +249,31 @@ namespace Practical_Test_Application.Migrations
 
             modelBuilder.Entity("Practical_Test_Application.Models.Contacts", b =>
                 {
-                    b.Property<int>("contactId")
+                    b.Property<int>("ContactId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("contactId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactId"));
 
-                    b.Property<string>("clientCode")
+                    b.Property<string>("ClientCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("firstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lastName")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("nrOfLinkedClients")
                         .HasColumnType("int");
 
-                    b.HasKey("contactId");
+                    b.HasKey("ContactId");
 
                     b.ToTable("Contacts");
                 });
